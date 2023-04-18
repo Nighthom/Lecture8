@@ -75,7 +75,7 @@ namespace _7_1
 
             foreach(var member in list)
             {
-                human.Print();
+                member.Print();
             }
         }
     }
