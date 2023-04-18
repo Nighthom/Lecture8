@@ -73,7 +73,7 @@ namespace _7_1
             { new Student("윤승준"), new Employee("이만희"), new Student("승준"), 
             new Professor("승준"), new Student("이"), new Employee("윤") };
 
-            foreach(var human in list)
+            foreach(var member in list)
             {
                 human.Print();
             }
