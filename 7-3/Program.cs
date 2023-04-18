@@ -13,7 +13,7 @@ class AutoShoppingMall
         else if (this is Car)
             vehicle = "자동차";
 
-        Console.WriteLine("AutoShoppingMall : " + vehicle);
+        Console.WriteLine("차종 : " + vehicle);
     }
 }
 
