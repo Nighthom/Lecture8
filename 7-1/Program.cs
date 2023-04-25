@@ -31,7 +31,7 @@ class Student : UniversityMember
     {
     }
 
-    public Student() { }
+    public Student() : base() { }
 
     public new void Breath()
     {
@@ -49,7 +49,7 @@ class Professor : UniversityMember
     public Professor(string name) : base(name)
     {
     }
-    public Professor() { }
+    public Professor() : base() { }
 
     public new void Breath()
     {
@@ -67,7 +67,7 @@ class Employee : UniversityMember
     public Employee(string name) : base(name)
     {
     }
-    public Employee() { }
+    public Employee() : base() { }
 
     public new void Breath()
     {
@@ -94,7 +94,7 @@ namespace _7_1
             {
                 member.Print();
 
-                // 자녀의 멤버 함수는 하이딩되어 사용되지 않는다.
+                // 자녀의 메서드는 부모 메서드에 하이딩되어 사용되지 않는다.
                 member.Breath();
                 // 자녀의 메서드를 사용하고 싶으면 적절한 자료형으로 캐스팅하여 호출한다.
             }

@@ -6,6 +6,15 @@ class Boarding
 {
     public string Name { get; set; }
 
+    public Boarding(string name)
+    {
+        Name = name;
+    }
+    public Boarding()
+    {
+        Name = null;
+    }
+
     public virtual string GetPosName() { return null; }
     public void Print()
     {
@@ -23,10 +32,10 @@ class Boarding
 
 class Pilot : Boarding
 {
-    public Pilot(string name)
+    public Pilot(string name) : base(name)
     {
-        Name = name;
     }
+    public Pilot() : base() { }
 
     public override string GetPosName()
     {
@@ -40,10 +49,10 @@ class Pilot : Boarding
 }
 class Stewardess : Boarding
 {
-    public Stewardess(string name)
+    public Stewardess(string name) : base(name)
     {
-        Name = name;
     }
+    public Stewardess() : base() { }
     public override string GetPosName()
     {
         return "승무원";
@@ -56,10 +65,11 @@ class Stewardess : Boarding
 }
 class Passanger : Boarding
 {
-    public Passanger(string name)
+    public Passanger(string name) : base(name)
     {
-        Name = name;
     }
+    public Passanger() : base() { }
+    
     public override string GetPosName()
     {
         return "탑승객";

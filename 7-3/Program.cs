@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 class AutoShoppingMall
 {
+    public AutoShoppingMall(string name) { }
+    public AutoShoppingMall() { }
 
     public virtual string GetVehicleName() { return null; }
     public void Print()
@@ -20,6 +22,8 @@ class AutoShoppingMall
 
 class Bycycle : AutoShoppingMall
 {
+    public Bycycle(string name) : base(name) { }
+    public Bycycle() : base() { }
     public override string GetVehicleName()
     {
         return "자전거";
@@ -33,6 +37,8 @@ class Bycycle : AutoShoppingMall
 
 class Bike : AutoShoppingMall
 {
+    public Bike(string name) : base(name) { }
+    public Bike() : base() { }
     public override string GetVehicleName()
     {
         return "오토바이";
@@ -46,6 +52,8 @@ class Bike : AutoShoppingMall
 
 class Car : AutoShoppingMall
 {
+    public Car(string name) : base(name) { }
+    public Car() : base() { }
     public override string GetVehicleName()
     {
         return "자동차";
