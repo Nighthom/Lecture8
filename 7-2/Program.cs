@@ -6,19 +6,18 @@ class Boarding
 {
     public string Name { get; set; }
 
-
+    public virtual string GetPosName() { return null; }
     public void Print()
     {
         Console.WriteLine("-------------------------");
         Console.Write("이름 : " + Name + " ");
-        string position = null;
-        if (this is Pilot)
-            position = "파일럿";
-        else if (this is Stewardess)
-            position = "승무원";
-        else if (this is Passanger)
-            position = "탑승객";
+        string position = GetPosName();
         Console.WriteLine("구분 : " + position);
+    }
+
+    public void Breath()
+    {
+        Console.WriteLine("숨 쉬기");
     }
 }
 
@@ -28,6 +27,16 @@ class Pilot : Boarding
     {
         Name = name;
     }
+
+    public override string GetPosName()
+    {
+        return "파일럿";
+    }
+
+    public new void Breath()
+    {
+        Console.WriteLine("파일럿 숨 쉬기");
+    }
 }
 class Stewardess : Boarding
 {
@@ -35,12 +44,30 @@ class Stewardess : Boarding
     {
         Name = name;
     }
+    public override string GetPosName()
+    {
+        return "승무원";
+    }
+
+    public new void Breath()
+    {
+        Console.WriteLine("승무원 숨 쉬기");
+    }
 }
 class Passanger : Boarding
 {
     public Passanger(string name)
     {
         Name = name;
+    }
+    public override string GetPosName()
+    {
+        return "탑승객";
+    }
+
+    public new void Breath()
+    {
+        Console.WriteLine("탑승객 숨 쉬기");
     }
 }
 
@@ -58,6 +85,9 @@ namespace _7_2
             foreach(var boarding in list)
             {
                 boarding.Print();
+
+                // 자녀 메서드가 부모 메서드에 하이딩됨
+                boarding.Breath();
             }
         }
     }
